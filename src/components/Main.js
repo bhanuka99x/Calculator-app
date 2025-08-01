@@ -8,8 +8,8 @@
       setTimeout(() => {
         cal.style.transform = 'scale(1)';
         cal.style.transition = 'transform 0.7s';
-      }, 100);
+      }, 400);
     }
   );
 
-  
+
