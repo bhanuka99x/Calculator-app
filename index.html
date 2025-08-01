@@ -4,14 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="./src/assets/keys.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./src/Style/style.css">
     <title>Calculator App</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
 
   <body
-    class="bg-gradient-to-br from-blue-500 to-purple-600 h-screen flex items-center justify-center"
+    class="flex items-center justify-center h-screen bg-gradient-to-br from-blue-500 to-purple-600"
   >
-    <div class=" border-white rounded-lg p-4 m-4 w-75 h-107 shadow-[0_0px_20px_rgba(0,0,0,0.3)]">
+    <div id="calculator"  class=" border-white rounded-lg p-4 m-4 w-75 h-107 shadow-[0_0px_20px_rgba(0,0,0,0.3)]">
       <!--Display-->
       <div id="display" class="bg-transparent shadow-[0_0px_4px_rgba(0,0,0,0.3)] w-66 h-18 rounded-lg text-right text-white text-3xl mb-4  p-4 overflow-auto"
       >
@@ -19,28 +20,28 @@
         <!-- Display content will go here -->
       </div>
       <!--Buttons-->
-<div class="grid grid-cols-4 gap-4  ">
-        <button onclick="clearDisplay()" class="col-span-2 bg-[rgba(255,0,0,0.1)]  shadow-[0_0px_4px_rgba(0,0,0,0.3)]  text-red-600 font-bold py-3 rounded ">C</button>
-        <button onclick="appendSymbol('/')" class=" bg-[rgba(0,0,255,0.1)] shadow-[0_0px_4px_rgba(0,0,0,0.4)] text-white font-bold py-3 rounded">÷</button>
-        <button onclick="appendSymbol('*')" class="bg-[rgba(0,0,255,0.1)] shadow-[0_0px_4px_rgba(0,0,0,0.4)] text-white font-bold py-3 rounded">×</button>
+<div class="grid grid-cols-4 gap-4 ">
+        <button onclick="clearDisplay()" class="col-span-2 bg-[rgba(255,0,0,0.1)]  shadow-[0_0px_4px_rgba(0,0,0,0.3)]  text-red-600 font-bold py-3 rounded  hover:bg-[rgba(255,0,0,0.2)]">C</button>
+        <button onclick="appendSymbol('/')" class=" bg-[rgba(0,0,255,0.1)] shadow-[0_0px_4px_rgba(0,0,0,0.4)] text-white font-bold py-3 rounded hover:bg-[rgba(0,0,255,0.2)]" >÷</button>
+        <button onclick="appendSymbol('*')" class="bg-[rgba(0,0,255,0.1)] shadow-[0_0px_4px_rgba(0,0,0,0.4)] text-white font-bold py-3 rounded hover:bg-[rgba(0,0,255,0.2)] ">×</button>
 
-        <button onclick="appendSymbol('7')" class="bg-[rgba(255,255,255,0.3)] shadow-[0_0px_4px_rgba(0,0,0,0.4)] text-white font-bold py-3 rounded">7</button>
-        <button onclick="appendSymbol('8')" class="bg-[rgba(255,255,255,0.3)] shadow-[0_0px_4px_rgba(0,0,0,0.4)] text-white font-bold py-3 rounded">8</button>
-        <button onclick="appendSymbol('9')" class="bg-[rgba(255,255,255,0.3)] shadow-[0_0px_4px_rgba(0,0,0,0.4)] text-white font-bold py-3 rounded">9</button>
-        <button onclick="appendSymbol('-')" class="bg-[rgba(0,0,255,0.1)] shadow-[0_0px_4px_rgba(0,0,0,0.4)] text-white font-bold py-3 rounded">−</button>
+        <button onclick="appendSymbol('7')" class="bg-[rgba(255,255,255,0.1)] shadow-[0_0px_4px_rgba(0,0,0,0.4)] text-white font-bold py-3 rounded hover:bg-[rgba(255,255,255,0)] ">7</button>
+        <button onclick="appendSymbol('8')" class="bg-[rgba(255,255,255,0.1)] shadow-[0_0px_4px_rgba(0,0,0,0.4)] text-white font-bold py-3 rounded hover:bg-[rgba(255,255,255,0)]">8</button>
+        <button onclick="appendSymbol('9')" class="bg-[rgba(255,255,255,0.1)] shadow-[0_0px_4px_rgba(0,0,0,0.4)] text-white font-bold py-3 rounded hover:bg-[rgba(255,255,255,0)] ">9</button>
+        <button onclick="appendSymbol('-')" class="bg-[rgba(0,0,255,0.1)] shadow-[0_0px_4px_rgba(0,0,0,0.4)] text-white font-bold py-3 rounded hover:bg-[rgba(0,0,255,0.2)]">−</button>
 
-        <button onclick="appendSymbol('4')" class="bg-[rgba(255,255,255,0.3)] shadow-[0_0px_4px_rgba(0,0,0,0.4)] text-white font-bold py-3 rounded">4</button>
-        <button onclick="appendSymbol('5')" class="bg-[rgba(255,255,255,0.3)] shadow-[0_0px_4px_rgba(0,0,0,0.4)] text-white  font-bold py-3 rounded">5</button>
-        <button onclick="appendSymbol('6')" class="bg-[rgba(255,255,255,0.3)] shadow-[0_0px_4px_rgba(0,0,0,0.4)] text-white  font-bold py-3 rounded">6</button>
-        <button onclick="appendSymbol('+')" class="bg-[rgba(0,0,255,0.1)] shadow-[0_0px_4px_rgba(0,0,0,0.4)] text-white font-bold py-3 rounded">+</button>
+        <button onclick="appendSymbol('4')" class="bg-[rgba(255,255,255,0.1)] shadow-[0_0px_4px_rgba(0,0,0,0.4)] text-white font-bold py-3 rounded hover:bg-[rgba(255,255,255,0)] ">4</button>
+        <button onclick="appendSymbol('5')" class="bg-[rgba(255,255,255,0.1)] shadow-[0_0px_4px_rgba(0,0,0,0.4)] text-white  font-bold py-3 rounded hover:bg-[rgba(255,255,255,0)] ">5</button>
+        <button onclick="appendSymbol('6')" class="bg-[rgba(255,255,255,0.1)] shadow-[0_0px_4px_rgba(0,0,0,0.4)] text-white  font-bold py-3 rounded hover:bg-[rgba(255,255,255,0)] ">6</button>
+        <button onclick="appendSymbol('+')" class="bg-[rgba(0,0,255,0.1)] shadow-[0_0px_4px_rgba(0,0,0,0.4)] text-white font-bold py-3 rounded hover:bg-[rgba(0,0,255,0.2)]">+</button>
 
-        <button onclick="appendSymbol('1')" class="bg-[rgba(255,255,255,0.3)] shadow-[0_0px_4px_rgba(0,0,0,0.4)] text-white font-bold py-3 rounded">1</button>
-        <button onclick="appendSymbol('2')" class="bg-[rgba(255,255,255,0.3)] shadow-[0_0px_4px_rgba(0,0,0,0.4)] text-white font-bold py-3 rounded">2</button>
-        <button onclick="appendSymbol('3')" class="bg-[rgba(255,255,255,0.3)] shadow-[0_0px_4px_rgba(0,0,0,0.4)] text-white font-bold py-3 rounded">3</button>
-        <button onclick="calculate()" class="row-span-2 bg-[rgba(0,255,0,0.3)] shadow-[0_0px_4px_rgba(0,0,0,0.4)] text-white font-bold py-3 rounded text-xl">=</button>
+        <button onclick="appendSymbol('1')" class="bg-[rgba(255,255,255,0.1)] shadow-[0_0px_4px_rgba(0,0,0,0.4)] text-white font-bold py-3 rounded hover:bg-[rgba(255,255,255,0)] ">1</button>
+        <button onclick="appendSymbol('2')" class="bg-[rgba(255,255,255,0.1)] shadow-[0_0px_4px_rgba(0,0,0,0.4)] text-white font-bold py-3 rounded hover:bg-[rgba(255,255,255,0)] ">2</button>
+        <button onclick="appendSymbol('3')" class="bg-[rgba(255,255,255,0.1)] shadow-[0_0px_4px_rgba(0,0,0,0.4)] text-white font-bold py-3 rounded hover:bg-[rgba(255,255,255,0)]">3</button>
+        <button onclick="calculate()" class="row-span-2 bg-[rgba(0,255,0,0.2)] shadow-[0_0px_4px_rgba(0,0,0,0.3)] text-white font-bold py-3 rounded text-xl hover:bg-[rgba(0,255,0,0.3)]">=</button>
 
-        <button onclick="appendSymbol('0')" class="col-span-2 bg-[rgba(255,255,255,0.3)] shadow-[0_0px_4px_rgba(0,0,0,0.4)] text-white font-bold py-3 rounded">0</button>
-        <button onclick="appendSymbol('.')" class="bg-[rgba(255,255,255,0.3)] shadow-[0_0px_4px_rgba(0,0,0,0.4)] text-white font-bold py-3 rounded">.</button>
+        <button onclick="appendSymbol('0')" class="col-span-2 bg-[rgba(255,255,255,0.1)] shadow-[0_0px_4px_rgba(0,0,0,0.4)] text-white font-bold py-3 rounded hover:bg-[rgba(255,255,255,0)] ">0</button>
+        <button onclick="appendSymbol('.')" class="bg-[rgba(255,255,255,0.1)] shadow-[0_0px_4px_rgba(0,0,0,0.4)] text-white font-bold py-3 rounded hover:bg-[rgba(255,255,255,0)] ">.</button>
       </div>
     </div>
     <script src="./src/components/Main.js"></script>
