@@ -1,11 +1,9 @@
 
 # 🧮 Calculator App
 
-# Live: https://bhanuka99x.github.io/Calculator-app/
+Live: https://bhanuka99x.github.io/Calculator-app/
 
 A simple, responsive calculator built using **HTML**, **Tailwind CSS**, and **JavaScript**. This project performs basic arithmetic operations with a sleek UI.
-
----
 
 ## 🚀 Features
 
